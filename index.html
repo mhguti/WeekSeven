@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>GeoLocation Usage</title>
+
+<link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.3.css">
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+document.addEventListener("deviceready", Ready, false);
+
+function Ready()
+{
+	var positionOptions= { timeout: 5000 };
+	navigator.geolocation.getCurrentPosition(positionSuccess, positionError, positionOptions);
+}
+
+function positionSuccess(position)
+{
+	var element = document.getElementById('geolocation');
+	element.innerHTML = 
+		'Latitude: ' + position.coords.latitude + '<br/>' +
+		'Longitude: ' + position.coords.longitude+ '<br/>' +
+		'Accuracy: ' + position.coords.accuracy + '<br/>' +
+		'Timestamp: ' + new Date(position.timestamp) + '<br/>';
+}
+
+function positionError()
+{
+	var element = document.getElementById('geolocation');
+	element.innerHTML = 
+		'code: ' + error.code + '\n' +
+		'message: ' + error.message + '\n';
+}
+
+</script>
+</head>
+<body>
+	<p id="geolocation">Finding geolocation...</p>
+</body>
+</html>
