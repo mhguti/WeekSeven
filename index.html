@@ -12,7 +12,7 @@ document.addEventListener("deviceready", Ready, false);
 
 function Ready()
 {
-	var positionOptions= { timeout: 5000 };
+	var positionOptions= {timeout:5000};
 	navigator.geolocation.getCurrentPosition(positionSuccess, positionError, positionOptions);
 }
 
@@ -30,8 +30,7 @@ function positionError()
 {
 	var element = document.getElementById('geolocation');
 	element.innerHTML = 
-		'code: ' + error.code + '\n' +
-		'message: ' + error.message + '\n';
+		'Failed to Obtain Location' + '<br/>';
 }
 
 </script>
