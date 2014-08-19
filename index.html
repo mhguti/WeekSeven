@@ -28,9 +28,7 @@ function positionSuccess(position)
 
 function positionError()
 {
-	var element = document.getElementById('geolocation');
-	element.innerHTML = 
-		'Failed to Obtain Location' + '<br/>';
+	navigator.notification.prompt('Failed to retrieve location', onPrompt,'Error');
 }
 
 </script>
