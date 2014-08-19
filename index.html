@@ -20,7 +20,7 @@ function positionSuccess(position)
 {
 	var element = document.getElementById('geolocation');
 	element.innerHTML = 
-		'Latitude: ' + position.coords.latitude + '<br/>' +
+		'<h1>Latitude: </h1>' + position.coords.latitude + '<br/>' +
 		'Longitude: ' + position.coords.longitude+ '<br/>' +
 		'Accuracy: ' + position.coords.accuracy + '<br/>' +
 		'Timestamp: ' + new Date(position.timestamp) + '<br/>';
@@ -36,6 +36,6 @@ function positionError()
 </script>
 </head>
 <body>
-	<p id="geolocation">Finding geolocation...</p>
+	<h2 id="geolocation">Finding geolocation...</h2>
 </body>
 </html>
